@@ -19,8 +19,14 @@
 
         </nav>
 
-        <main class="col-sm-8 ml-sm-auto col-md-9 pt-3" role="main">
-          <h1>KEYSPOTS MAP</h1>
+        <main class="col-sm-8 col-md-9" role="main">
+
+          <agm-map 
+            [latitude]="lat" 
+            [longitude]="lng"
+            [zoom]="13"
+          >
+        </agm-map>
 
           
         </main>

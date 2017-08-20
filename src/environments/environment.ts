@@ -4,5 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production:          false,
+  GOOGLE_MAPS_API_KEY: 'AIzaSyCfyTZauO_2d_1lIUHm6d3T4IJOHAQceEY',
+  KEYSPOTS_API_BASE:   'https://www.phillykeyspots.org/wp-json/store-locator-plus/v2'
 };

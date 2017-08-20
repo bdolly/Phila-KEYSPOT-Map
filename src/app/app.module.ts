@@ -1,7 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {environment} from '../environments/environment';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, ApplicationRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { AgmCoreModule } from '@agm/core';
+
 import { KeyspotCardComponent } from './keyspot-card/keyspot-card.component';
 
 @NgModule({
@@ -10,7 +15,12 @@ import { KeyspotCardComponent } from './keyspot-card/keyspot-card.component';
     KeyspotCardComponent
   ],
   imports: [
-    BrowserModule
+   BrowserModule,
+    CommonModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.GOOGLE_MAPS_API_KEY
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
