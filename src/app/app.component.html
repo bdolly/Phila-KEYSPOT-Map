@@ -14,9 +14,12 @@
         <nav class="col-sm-4 col-md-3 d-none d-sm-block bg-light sidebar">
             
             <keyspot-card
-                *ngFor="let keySpotLocation of keyspots"
+
+                *ngFor="let keySpotLocation of keyspots; let i = index"
+                id="ks__card-{{i}}"
                 [title]="keySpotLocation.title"
                 [address]="keySpotLocation.address"
+                [expanded]="keySpotLocation.expanded"
             ></keyspot-card>
 
         </nav>
@@ -35,7 +38,16 @@
                     [latitude]="keySpot.lat"
                     [longitude]="keySpot.lng"
                     [opacity]="keySpot.opacity"
+                    (markerClick)="clickedMarker(keySpot.label, i)"
                 >
+                    <agm-info-window
+                    [latitude]="keySpot.lat"
+                    [longitude]="keySpot.lng"
+                    [isOpen]="false"
+                    (infoWindowClose)="onInfoWindowClose(keySpot,i)"
+                    >
+                        <h5>{{keySpot.title}}</h5>
+                    </agm-info-window>
                 </agm-marker>
 
             </agm-map>

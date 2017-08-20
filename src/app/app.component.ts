@@ -15,7 +15,7 @@ interface marker {
 	visible:   boolean,
 	title:     string,
 	init:      boolean,
-	cardOpen:  boolean,
+	expanded:  boolean,
 	address:   any,
 	clickable: boolean 
 }
@@ -81,11 +81,48 @@ export class AppComponent implements OnInit{
   			opacity:   0.25,
   			visible:   true,
   			init:      true,
-  			cardOpen:  false,
+  			expanded:  false,
   			address: `${locationData.sl_address} ${locationData.sl_address2 !== "" ? locationData.sl_address2 : ''}, ${locationData.sl_city}  ${locationData.sl_state} `,
   			clickable: false
 
   		}
   	}
+
+  	/**
+  	 * On Marker Click scroll it's corresponding card into view;
+  	 * Then fade out all other markers and expand the active card.  
+  	 * @param {sting}    label - id of sl_location 
+  	 * @param {number} index - zero based list index 
+  	 */
+  	public clickedMarker(label: string, index: number): void {
+  		
+  		let locationCard = document.getElementById('ks__card-'+index);
+  		locationCard.scrollIntoView();
+
+		this.keyspots =  this.keyspots.map(location=>{
+  			if(location.label !== label) location.opacity = 0.25;
+  			if(location.label == label) location.expanded = true;
+  			return location;
+  		})
+  	}
+
+
+  	/**
+  	 * Reset marker and card states when the infoWindow is closed
+  	 * @param {marker} marker - marker object attached to map marker
+  	 * @param {number} i      - zero based list index 
+  	 */
+  	onInfoWindowClose(marker: marker,i: number): void{
+  		if(!marker.init)this.keyspots = this.keyspots.map(location=>{
+  			location.opacity = 1; 
+  			location.expanded = false; 
+  			return location;
+  		})
+  		this.keyspots[i].init = false;
+  	}
+
+
+
+
 
 }

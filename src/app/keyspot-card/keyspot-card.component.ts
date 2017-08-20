@@ -8,8 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class KeyspotCardComponent implements OnInit {
 
-  expanded: boolean = false;
-
+  @Input() expanded: boolean;
   @Input() title: string;
   @Input() address: string;
  
