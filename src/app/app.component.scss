@@ -1,0 +1,28 @@
+
+
+
+.container-fluid{
+	padding:0;
+}
+
+
+img{
+	display:block;
+	max-width: 100%;
+	width:100%;
+}
+
+
+.navbar-brand{
+	max-width: 300px;
+}
+
+.navbar-text{
+	float:right;
+	align-self:flex-end;
+
+}
+
+#navbarText{
+	justify-content: flex-end;
+}
