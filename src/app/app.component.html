@@ -14,12 +14,14 @@
         <nav class="col-sm-4 col-md-3 d-none d-sm-block bg-light sidebar">
             
             <keyspot-card
-                *ngFor="let keySpotLocation of keyspots; "
+                *ngFor="let keySpotLocation of keyspots"
+                [title]="keySpotLocation.title"
+                [address]="keySpotLocation.address"
             ></keyspot-card>
 
         </nav>
 
-        
+
 
         <main class="col-sm-8ng se col-md-9" role="main">
 

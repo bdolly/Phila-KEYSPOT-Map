@@ -3,6 +3,11 @@
 }
 
 .keyspot__card__img {
+	max-width: 50px;
+	max-height: 50px;
 	background: #ccc;
+}
 
+.keyspot__card_body{
+	padding: 10px 1.25rem;
 }
