@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
+import { HttpModule } from '@angular/http';
 
 import { KeyspotCardComponent } from './keyspot-card/keyspot-card.component';
 
@@ -16,6 +17,7 @@ import { KeyspotCardComponent } from './keyspot-card/keyspot-card.component';
   ],
   imports: [
    BrowserModule,
+   HttpModule,
     CommonModule,
     FormsModule,
     AgmCoreModule.forRoot({
