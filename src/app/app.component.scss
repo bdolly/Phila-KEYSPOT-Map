@@ -14,7 +14,7 @@ img{
 
 
 .navbar-brand{
-	max-width: 300px;
+	max-width: 200px;
 }
 
 .navbar-text{
@@ -25,4 +25,12 @@ img{
 
 #navbarText{
 	justify-content: flex-end;
+}
+
+
+
+.sidebar{
+	height: 90vh;
+	overflow-y:scroll;
+	padding:0 ;
 }

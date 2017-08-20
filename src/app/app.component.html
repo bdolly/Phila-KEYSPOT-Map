@@ -3,18 +3,28 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
           <img src="/assets/logo-keyspot-retina.png" alt="">
-        </a>
-
-
-        
-        <h4 class="navbar-text text-light">{{title}}</h4>
-        
-
+        </a>        
+        <!-- <h4 class="navbar-text text-light">{{title}}</h4> -->
     </nav>
 
 
 
+    <div class="row">
 
+        <nav class="col-sm-4 col-md-3 d-none d-sm-block bg-light sidebar">
+            
+            <keyspot-card
+                *ngFor="let location of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]"
+            ></keyspot-card>
+
+        </nav>
+
+        <main class="col-sm-8 ml-sm-auto col-md-9 pt-3" role="main">
+          <h1>KEYSPOTS MAP</h1>
+
+          
+        </main>
+    </div>
 
 
 
