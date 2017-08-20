@@ -14,10 +14,12 @@
         <nav class="col-sm-4 col-md-3 d-none d-sm-block bg-light sidebar">
             
             <keyspot-card
-                *ngFor="let location of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]"
+                *ngFor="let keySpotLocation of keyspots; "
             ></keyspot-card>
 
         </nav>
+
+        
 
         <main class="col-sm-8ng se col-md-9" role="main">
 
@@ -26,7 +28,15 @@
             [longitude]="lng"
             [zoom]="13"
           >
-        </agm-map>
+                <agm-marker 
+                    *ngFor="let keySpot of keyspots; let i = index;"
+                    [latitude]="keySpot.lat"
+                    [longitude]="keySpot.lng"
+                    [opacity]="keySpot.opacity"
+                >
+                </agm-marker>
+
+            </agm-map>
 
           
         </main>

@@ -22,15 +22,17 @@ export class KeyspotsApiService {
    * This ensures that on the front-end each location will be added as it's response is returned
    * instead of waiting for all requests to return before delivering results to the front-end. 
    * This makes for a smoother user experience.
+   *
+   * Data for this pulled from https://www.opendataphilly.org/dataset/philly-keyspot-locations
    * 
    */
-  getKeypots(){
+  getKeyspots(){
 
   	return this._http
   				.get(`${environment.KEYSPOTS_API_BASE}/locations`)
           		.flatMap(res => res.json())
           		.mergeMap( (loc, i) =>{ 
-          		  // console.log(loc);
+          		  
           		  return this._http.get(`${environment.KEYSPOTS_API_BASE}/locations/${loc["sl_id"]}`)
           		} );
             
