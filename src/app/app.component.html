@@ -46,13 +46,19 @@
                     (markerClick)="clickedMarker(keySpot.label,infoWindow, i)"
                 >
                     <agm-info-window
-                    #infoWindow
-                    [latitude]="keySpot.lat"
-                    [longitude]="keySpot.lng"
-                    [isOpen]="false"
-                    (infoWindowClose)="onInfoWindowClose(keySpot,infoWindow,i)"
+                        class="keyspot__infowindow"
+                        #infoWindow
+                        [maxWidth]="200"
+                        [latitude]="keySpot.lat"
+                        [longitude]="keySpot.lng"
+                        [isOpen]="false"
+                        (infoWindowClose)="onInfoWindowClose(keySpot,infoWindow,i)"
                     >
-                        <h5>{{keySpot.title}}</h5>
+                        <h5 class="keyspot__infowindow_title">{{keySpot.title}}</h5>
+                        <address class="keyspot__infowindow_address d-md-none d-lg-none">{{keySpot.address}}</address>
+                        <a class="keyspot__infowindow_phone d-md-none d-lg-none" href="tel:{{keySpot.phone}}"> <i class="fa fa-phone" aria-hidden="true"></i>{{keySpot.phone}}</a>
+
+
                     </agm-info-window>
                 </agm-marker>
 
