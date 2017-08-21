@@ -1,4 +1,9 @@
-
+loading-bar{
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 100000;
+}
 
 
 .container-fluid{
@@ -12,6 +17,9 @@ img{
 	width:100%;
 }
 
+.navbar{
+	justify-content: space-between !important; 
+}
 
 .navbar-brand{
 	max-width: 200px;

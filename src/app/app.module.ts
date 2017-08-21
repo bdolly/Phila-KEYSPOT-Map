@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
+import {LoadingBarModule, LoadingBarService} from "ng2-loading-bar";
 import { HttpModule } from '@angular/http';
 
 import { KeyspotCardComponent } from './keyspot-card/keyspot-card.component';
@@ -18,6 +19,7 @@ import { KeyspotCardComponent } from './keyspot-card/keyspot-card.component';
   imports: [
    BrowserModule,
    HttpModule,
+   LoadingBarModule,
     CommonModule,
     FormsModule,
     AgmCoreModule.forRoot({
