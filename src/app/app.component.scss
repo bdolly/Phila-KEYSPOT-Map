@@ -48,6 +48,9 @@ agm-map {
   height: 90vh;
 }
 
-.keyspot__infowindow_phone{
+.keyspot__infowindow_phone,
+.keyspot__infowindow_url,
+{
+	padding-bottom:5px;
 	.fa{padding: 0 10px 0 0;}
 }

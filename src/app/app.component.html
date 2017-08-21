@@ -56,7 +56,10 @@
                     >
                         <h5 class="keyspot__infowindow_title">{{keySpot.title}}</h5>
                         <address class="keyspot__infowindow_address d-md-none d-lg-none">{{keySpot.address}}</address>
-                        <a class="keyspot__infowindow_phone d-md-none d-lg-none" href="tel:{{keySpot.phone}}"> <i class="fa fa-phone" aria-hidden="true"></i>{{keySpot.phone}}</a>
+                        <a class="keyspot__infowindow_phone d-md-none d-lg-none d-block" href="tel:{{keySpot.phone}}"> <i class="fa fa-phone" aria-hidden="true"></i>{{keySpot.phone}}</a>
+                        <a  class="keyspot__infowindow_url d-md-none d-lg-none d-block" href="{{keySpot.url}}" target="_blank">
+                            <i class="fa fa-external-link" aria-hidden="true"></i>website
+                        </a>
 
 
                     </agm-info-window>
