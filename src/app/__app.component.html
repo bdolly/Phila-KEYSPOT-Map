@@ -18,10 +18,10 @@
                 id="ks__card-{{i}}"
                 [title]="keySpotLocation.title"
                 [address]="keySpotLocation.address"
-                [desc]="keySpotLocation.desc"
+                [expanded]="keySpotLocation.expanded"
                 [phone]="keySpotLocation.phone"
                 [url]="keySpotLocation.url"
-                [expanded]="keySpotLocation.expanded"
+                [desc]="keySpotLocation.desc"
             ></keyspot-card>
 
         </nav>
@@ -40,14 +40,14 @@
                     [latitude]="keySpot.lat"
                     [longitude]="keySpot.lng"
                     [opacity]="keySpot.opacity"
-                    (markerClick)="clickedMarker(keySpot.label,infoWindow, i)"
+                    (markerClick)="clickedMarker(keySpot.label, infoWindow, i)"
                 >
                     <agm-info-window
-                    #infoWindow
-                    [latitude]="keySpot.lat"
-                    [longitude]="keySpot.lng"
-                    [isOpen]="false"
-                    (infoWindowClose)="onInfoWindowClose(keySpot,i)"
+                        #infoWindow
+                        [latitude]="keySpot.lat"
+                        [longitude]="keySpot.lng"
+                        [isOpen]="false"
+                        (infoWindowClose)="onInfoWindowClose(keySpot,infoWindow,i)"
                     >
                         <h5>{{keySpot.title}}</h5>
                     </agm-info-window>

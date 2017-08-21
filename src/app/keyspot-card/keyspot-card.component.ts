@@ -11,6 +11,9 @@ export class KeyspotCardComponent implements OnInit {
   @Input() expanded: boolean;
   @Input() title: string;
   @Input() address: string;
+  @Input() phone: string;
+  @Input() url: string;
+  @Input() desc: string;
  
   constructor() { }
 

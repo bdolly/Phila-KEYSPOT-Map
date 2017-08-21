@@ -102,36 +102,28 @@ export class AppComponent implements OnInit{
   	 * @param {sting}    label - id of sl_location 
   	 * @param {number} index - zero based list index 
   	 */
-  	public clickedMarker(label: string, infoWindow: any, index: number): void {
+  	public clickedMarker(marker: marker, infoWindow: any, index: number): void {
   		
   		let locationCard = document.getElementById('ks__card-'+index);
   		locationCard.scrollIntoView();
 
 		this.keyspots =  this.keyspots.map(location=>{
-  			if(location.label !== label){
+  			if(location.label !== marker.label){
   				location.opacity   = 0.25;
+  				location.markerClickable = false;
   				location.expanded  = false;
   			} 
-  			if(location.label == label) location.expanded = true;
+  			if(location.label == marker.label) location.expanded = true;
   			return location;
   		})
 
 		// close any open infoWindows
 
-		// if( this.infoWindowOpened ===  infoWindow) return;
-  //   	if(this.infoWindowOpened !== null) this.infoWindowOpened.close();
-  //   	this.infoWindowOpened = infoWindow;
+		if( this.infoWindowOpened ===  infoWindow) return;
+    	if(this.infoWindowOpened !== null) this.infoWindowOpened.close();
+    	this.infoWindowOpened = infoWindow;
 
   	}
-
-  	private _resetMarkersAppearance():void{
-  		this.keyspots = this.keyspots.map(location=>{
-  				location.opacity  = 1; 
-  				location.expanded = false; 
-  				return location;
-  			})
-  	}
-
 
 
   	/**
@@ -139,9 +131,16 @@ export class AppComponent implements OnInit{
   	 * @param {marker} marker - marker object attached to map marker
   	 * @param {number} i      - zero based list index 
   	 */
-  	onInfoWindowClose(marker: marker, i: number): void{
-  		
-  		if(!marker.init) this._resetMarkersAppearance();
+  	onInfoWindowClose(marker: marker, infoWindow, i: number): void{
+  		console.log('onInfoWindowClose', marker);
+
+  		if( !marker.init ){
+  			this.keyspots = this.keyspots.map(location=>{
+  				location.opacity  = 1; 
+  				location.expanded = false; 
+  				return location;
+  			})
+  		}
 
   		this.keyspots[i].init = false;
   	}

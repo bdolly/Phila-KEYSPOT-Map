@@ -1,5 +1,10 @@
 .keyspot__card{
 	padding-left:20px;
+	.list-group-item{
+		.fa{
+			padding: 0 14% 0 0;
+		}
+	}
 }
 
 .keyspot__card__img {
@@ -10,4 +15,23 @@
 
 .keyspot__card_body{
 	padding: 10px 1.25rem;
+}
+
+.keyspot__card__title{
+	font-size:1rem;
+	margin-bottom: 10px;
+}
+
+.keyspot__card__address{
+	font-size:.75rem;	
+}
+
+.keyspot__card__desc{
+	font-size:.75rem;	
+	padding: 0 5%;
+
+}
+
+.keyspot__card__url{
+	a{ font-size:.65rem;}
 }
